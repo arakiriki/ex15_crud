@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 
+Route::resource('/book','App\Http\Controllers\BookController');
+
