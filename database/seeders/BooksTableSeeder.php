@@ -27,3 +27,5 @@ class BooksTableSeeder extends Seeder
         DB::Table('books')->insert($params);
     }
 }
+
+
