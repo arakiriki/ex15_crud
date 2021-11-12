@@ -75,10 +75,12 @@ class BookController extends Controller
     {
         $update = [
             'title' => $request->title,
-            'author' => $request->author
+            'author' => $request->author,
+            'Synopsis' => $request->Synopsis,
         ];
         Book::where('id', $id)->update($update);
-        return back()->with('success', '編集完了しました');
+        return redirect()->route('book.index')->with('success', '編集完了しました');
+        // return back()->with('success', '編集完了しました');
     }
 
     /**

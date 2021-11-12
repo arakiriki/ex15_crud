@@ -7,6 +7,8 @@
 
     <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.create') }}'">新規追加</button>
             
+
+    
     @if ($message = Session::get('success'))
     <p>{{ $message }}</p>
     @endif

@@ -10,15 +10,19 @@
         <tr>
             <th>title</th>
             <th>author</th>
-            <th>created_at</th>
-            <th>updated_at</th>
         </tr>
         <tr>
             <td scope="row">{{ $book->title }}</td>
             <td scope="row">{{ $book->author }}</td>
-            <td scope="row">{{ $book->created_at }}</td>
-            <td scope="row">{{ $book->updated_at }}</td>
         </tr>
+
+ 
+
     </table>
+
+    <div class="bg-light">
+        <h3>あらすじ</h3>
+        <p>{{ $book->Synopsis }}</p>
+    </div>
 
 @endsection

@@ -17,14 +17,10 @@ class BooksTableSeeder extends Seeder
         $params = [
             'title' => '愛と幻想のファシズム',
             'author' => '村上龍',
+            'Synopsis' => 'あらすじ'
         ];
         DB::Table('books')->insert($params);
 
-        $params = [
-            'title' => '限りなく透明に近いブルー',
-            'author' => '村上龍',
-        ];
-        DB::Table('books')->insert($params);
     }
 }
 
