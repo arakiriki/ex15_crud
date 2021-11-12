@@ -1,0 +1,1 @@
+<p>{{ \Carbon\Carbon::now()->format("Y/m/d") }}</p>  
