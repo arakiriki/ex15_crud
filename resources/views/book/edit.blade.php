@@ -1,6 +1,6 @@
 @extends('book.layouts.base')
 
-@section('title','Book Edit')
+@section('title','edit')
 
 @section('content')
 

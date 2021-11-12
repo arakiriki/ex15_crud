@@ -1,6 +1,6 @@
 @extends('book.layouts.base')
 
-@section('title','Book Index')
+@section('title','index')
 
 @section('content')
     
@@ -10,7 +10,7 @@
 
     
     @if ($message = Session::get('success'))
-    <p>{{ $message }}</p>
+    <p class="bg-light">{{ $message }}</p>
     @endif
 
     <table class="table table-light table-striped">

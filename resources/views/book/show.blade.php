@@ -1,6 +1,6 @@
 @extends('book.layouts.base')
 
-@section('title','Book Show')
+@section('title','show')
 
 @section('content')
 
@@ -9,20 +9,28 @@
     <table class="table table-light table-stripe">
         <tr>
             <th>title</th>
-            <th>author</th>
         </tr>
         <tr>
             <td scope="row">{{ $book->title }}</td>
-            <td scope="row">{{ $book->author }}</td>
         </tr>
-
- 
-
     </table>
 
-    <div class="bg-light">
-        <h3>あらすじ</h3>
-        <p>{{ $book->Synopsis }}</p>
-    </div>
+    <table class="table table-light table-stripe">
+        <tr>
+            <th>author</th>
+        </tr>
+        <tr>
+            <td scope="row">{{ $book->author }}</td>
+        </tr>
+    </table>
+    
+    <table class="table table-light table-stripe">
+    <tr>
+        <th>story</th>
+    </tr>
+    <tr>
+        <td scope="row">{{ $book->Synopsis }}</td>
+    </tr>
+    </table>
 
 @endsection
