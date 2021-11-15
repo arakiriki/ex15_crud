@@ -9,7 +9,7 @@
 </head>
 <body class="bg-dark">
     
-    <div class="alert alert-dark" style="margin-top: 5%">
+    <div class="alert alert-dark" style="margin: 5% 1%">
 
 
         <header>

@@ -4,8 +4,11 @@
 
 @section('content')
 
-    <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button>
+    <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button><br><br>
+
     
+    <img src="{{ '/storage/'.$book->image }}" width="300px"><br><br>
+
     <table class="table table-light table-stripe">
         <tr>
             <th>title</th>

@@ -36,8 +36,26 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->all());
+        // Book::create($request->all());
+        // dd($request->all());
+
+        $image = $request->file('image');
+
+        if($request->hasFile('image') && $image->isValid()){
+            $file_name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('public',$file_name);
+        }else{
+            $file_name = '';
+        }
+
+        Book::create(
+        ["title" => $request["title"],
+        "author" => $request["author"],
+        "Synopsis" => $request["Synopsis"],
+        "image" => $file_name]);
+
         return redirect()->route('book.index')->with('success', '新規登録完了しました');
+
     }
 
     /**
@@ -73,12 +91,26 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $image = $request->file('image');
+        if($request->hasFile('image') && $image->isValid()){
+            $file_name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('public',$file_name);
+        }else{
+            $file_name = '';
+        }
+
         $update = [
             'title' => $request->title,
             'author' => $request->author,
             'Synopsis' => $request->Synopsis,
+            "image" => $file_name,
         ];
         Book::where('id', $id)->update($update);
+
+
+
+
         return redirect()->route('book.index')->with('success', '編集完了しました');
         // return back()->with('success', '編集完了しました');
     }

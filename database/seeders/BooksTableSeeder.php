@@ -17,7 +17,8 @@ class BooksTableSeeder extends Seeder
         $params = [
             'title' => '愛と幻想のファシズム',
             'author' => '村上龍',
-            'Synopsis' => 'あらすじ'
+            'Synopsis' => 'あらすじ',
+            'image' => 'test',
         ];
         DB::Table('books')->insert($params);
 

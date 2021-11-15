@@ -11,6 +11,7 @@ class Book extends Model
         'title',
         'author',
         'Synopsis',
+        'image',
     ];
     use HasFactory;
 }
