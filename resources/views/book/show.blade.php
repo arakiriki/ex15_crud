@@ -6,8 +6,9 @@
 
     <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button><br><br>
 
-    
+    @if ($book->image != "" )
     <img src="{{ '/storage/'.$book->image }}" width="300px"><br><br>
+    @endif
 
     <table class="table table-light table-stripe">
         <tr>
