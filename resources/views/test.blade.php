@@ -33,8 +33,14 @@ $( function() {
                 $("#title").text(data1.Items[0].Item.title);
                 $("#author").text(data1.Items[0].Item.author);
                 $("#url").text(data1.Items[0].Item.itemUrl);
+                $("#story").text(data1.Items[0].Item.itemCaption);
                 $("#img").attr('src',data1.Items[0].Item.largeImageUrl);
                 
+                $("#page").click(function(){
+                    const itemUrl = data1.Items[0].Item.itemUrl;
+                    window.open(itemUrl, '_blank')
+                });
+
 				// 4. JavaScriptオブジェクトをJSONに変換
 				const data2 = JSON.stringify(data1);
 				console.log(data2); //コンソールにJSONが表示される
@@ -55,7 +61,6 @@ $( function() {
 </head>
 <body >
 
-    <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button><br><br>
 
 {{-- <p>ステータス：<span id="span1"></span></p>
 <p>検索結果：<span id="span2"></span></p>
@@ -63,22 +68,34 @@ $( function() {
 <p>完了：<span id="span4"></span></p> --}}
 
 <form id="form1">
-<div>
-    <p>キーワード</p>
-    <input type="text" name="keyword" value="test"><br><br>
-</div>
-<div>
-    <p>検索数</p>
-    <input type="text" name="hits" value="1" maxlength="10">    
-</div>
-<input type="button" id="button1" value="検索"><br><br>
+<input class="btn btn-primary" type="button" id="button1" value="検索">
+<button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button><br><br>
+<p>キーワード：<input type="text" name="keyword" value="test"></p>
+<p>検索数：<input type="text" name="hits" value="1" maxlength="10"></p>
 </form>
 
 
-<p>タイトル：<span id="title"></span></p>
-<p>著者名：<span id="author"></span></p>
-<p>URL：<span id="url"></span></p>
-<img id="img" src="">
 
+<table class="table table-light table-striped" Valign=center>
+    <thead>
+    <tr>
+        <th scope="col" style="width: 150px">image</th>
+        <th scope="col" style="width: 150px">title</th>
+        <th scope="col" style="width: 150px">author</th>
+        <th scope="col" style="width: ">story</th>
+        <th scope="col" style="width: 60px">item page</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row" style="vertical-align:middle;"><img id="img" src=""></th>
+        <th scope="row" style="vertical-align:middle;"><p><span id="title"></span></p></th>
+        <th scope="row" style="vertical-align:middle;"><p><span id="author"></span></p></th>
+        <th scope="row" style="vertical-align:middle;"><p><span id="story"></span></p></th>
+        <th scope="row" style="vertical-align:middle;"><button type="button" id="page" class="btn btn-dark">jamp</button><br><br></th>
+        
+    </tr>
+    </tbody>
+</table>
 
 @endsection
