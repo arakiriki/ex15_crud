@@ -19,5 +19,12 @@ Route::get('/', function () {
 });
 
 
+//API検索機能のテスト
+Route::get('test', function () {
+    return view('test');
+})->name('test');
+
+
 Route::resource('/book','App\Http\Controllers\BookController');
+
 

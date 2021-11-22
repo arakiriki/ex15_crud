@@ -6,6 +6,7 @@
     
 
     <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.create') }}'">新規追加</button>
+    <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('test') }}'">API検索</button>
             
 
     
