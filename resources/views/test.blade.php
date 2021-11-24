@@ -70,7 +70,7 @@ $( function() {
 <form id="form1">
 <input class="btn btn-primary" type="button" id="button1" value="検索">
 <button type="button" class="btn btn-dark"  onclick="location.href='{{ route('book.index') }}'">一覧画面</button><br><br>
-<p>キーワード：<input type="text" name="keyword" value="test"></p>
+<p>キーワード：<input type="text" name="keyword" value="laravel"></p>
 <p>検索数：<input type="text" name="hits" value="1" maxlength="10"></p>
 </form>
 
